@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import Header from "./components/Header"
+import Content from "./components/Content"
+import Footer from "./components/Footer"
 
 function App() {
+  const appName = "Grocery Lists"
+
+  const [items, setItems] = useState([
+    {
+      id: 1,
+      name: "Soda Pop",
+      price: 50,
+      checked: false
+    },
+    {
+      id: 2,
+      name: "Crackers",
+      price: 10,
+      checked: true
+    },
+    {
+      id: 3,
+      name: "Pizza",
+      price: 25,
+      checked: true
+    }
+  ])
+
+  const handleDelete = (id) => {
+    const itemsLeft = items.filter((item) => item.id !==id)
+    setItems(itemsLeft)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Header appName={appName} />
+          <Content
+          items={items}
+            handleDelete={handleDelete}
+          />
+      <Footer />
+    </React.Fragment>
   );
 }
 
