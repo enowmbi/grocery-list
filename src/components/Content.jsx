@@ -1,14 +1,16 @@
 import ItemList from "./ItemList"
 import "../styles/content.css"
 
-const Content = ({items, handleDelete}) => {
-return(
-    <main>
-                <ItemList
+const Content = ({ items, handleChange,checked, handleDelete }) => {
+    return (
+        <main>
+            <ItemList
                 items={items}
-                 handleDelete={handleDelete} />
-    </main>
-)
+                handleChange={handleChange}
+                handleDelete={handleDelete}
+            />
+        </main>
+    )
 
 }
 

@@ -1,11 +1,14 @@
 import "../styles/item.css"
 
-const Item = ({ id, checked, name, price, handleDelete }) => {
+
+
+const Item = ({ id, checked, name, price, handleChange, handleDelete }) => {
     return (
         <section>
             <input
                 type="checkbox"
                 checked={checked}
+                onChange ={()=> handleChange(id)}
             />
             <label>{name}</label>
             <label>{price}</label>
