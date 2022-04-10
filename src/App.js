@@ -18,8 +18,9 @@ function App() {
     }
 
     const handleDelete = (id) => {
-        const itemsLeft = items.filter((item) => item.id !== id)
-        setItems(itemsLeft)
+        const listItems = items.filter((item) => item.id !== id)
+        setItems(listItems)
+        localStorage.setItem('listItems', JSON.stringify(listItems))
     }
 
   return (
