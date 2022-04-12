@@ -9,7 +9,6 @@ const ItemList = ({items, handleChange, handleDelete}) =>{
                 id={item.id}
                 checked={item.checked}
                 name={item.name}
-                price={item.price}
                 handleChange={handleChange}
                 handleDelete={handleDelete}
                 />
